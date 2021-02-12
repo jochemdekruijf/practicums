@@ -18,7 +18,7 @@ class VoetbalclubTest {
 
     @BeforeEach
     public void init2(){
-        vb2 = new Voetbalclub(" ");
+        vb2 = new Voetbalclub("");
 
     }
     @BeforeEach
@@ -59,14 +59,14 @@ class VoetbalclubTest {
     @Test
     void testLeegGelijk(){
         vb2.verwerkResultaat('g');
-        assertEquals("FC 1 0 1 0 1 ", vb2.toString());
+        assertEquals("FC 1 0 1 0 1", vb2.toString());
 
     }
 
     @Test
     void testNaamGelijk(){
         vb3.verwerkResultaat('g');
-        assertEquals("Club 1 0 1 0 1 ", vb3.toString());
+        assertEquals("Club 1 0 1 0 1", vb3.toString());
 
     }
 
@@ -90,11 +90,4 @@ class VoetbalclubTest {
         assertEquals("Club 1 0 0 1 0", vb3.toString());
 
     }
-
-
-
-
-
-
-
 }
