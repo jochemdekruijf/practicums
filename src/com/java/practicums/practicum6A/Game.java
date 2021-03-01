@@ -47,8 +47,8 @@ public class Game {
 
     @Override
     public String toString() {
-        return naam + " uitgegeven in " + releaseJaar + "; nieuwprijs: " + String.format("%.2f", nieuwPrijs) +
-                " nu voor: " + String.format("%.2f", huidigeWaarde());
+        return naam + ", uitgegeven in " + releaseJaar + "; nieuwprijs: €" + String.format("%.2f", nieuwPrijs) +
+                " nu voor: €" + String.format("%.2f", huidigeWaarde());
     }
 
     @Override
@@ -56,6 +56,6 @@ public class Game {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Game game = (Game) o;
-        return releaseJaar == game.releaseJaar && Double.compare(game.nieuwPrijs, nieuwPrijs) == 0 && Objects.equals(naam, game.naam);
+        return releaseJaar == game.releaseJaar && Objects.equals(naam, game.naam);
     }
 }

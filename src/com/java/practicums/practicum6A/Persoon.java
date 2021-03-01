@@ -14,8 +14,8 @@ public class Persoon {
 
     public boolean koop(Game g) {
         if (this.budget >= g.huidigeWaarde()) {
-            for( Game game : games) {
-                if( game.equals(g)) {
+            for (Game game : games) {
+                if (game.equals(g)) {
                     return false;
                 }
             }
@@ -27,10 +27,12 @@ public class Persoon {
     }
 
     public boolean verkoop(Game g, Persoon koper) {
-        if(koper.koop(g)) {
-            budget += g.huidigeWaarde();
-            games.remove(g);
-            return true;
+        if (games.contains(g)) {
+            if (koper.koop(g)) {
+                budget += g.huidigeWaarde();
+                games.remove(g);
+                return true;
+            }
         }
         return false;
     }
@@ -53,9 +55,9 @@ public class Persoon {
 
     @Override
     public String toString() {
-        String string = naam + " Heeft een budget van €" + String.format("%.2f", budget) + " en bezit de volgende games: \n";
+        String string = naam + " heeft een budget van €" + String.format("%.2f", budget) + " en bezit de volgende games:";
         for (Game g : games) {
-            string += g + "\n";
+            string += "\n" + g;
         }
         return string;
 
