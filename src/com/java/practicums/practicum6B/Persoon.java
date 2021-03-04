@@ -37,6 +37,21 @@ public class Persoon {
         return false;
     }
 
+
+    public ArrayList<Game> bepaalGamesNietInBezit(ArrayList<Game> teKoop){
+        ArrayList<Game> nietMijnGames = new ArrayList<Game>();
+        for (Game g : teKoop){
+            for (Game eigeng: games){
+                if (!(g.equals(eigeng))){
+                    nietMijnGames.add(g);
+                }
+            }
+        }
+
+        return nietMijnGames;
+
+    }
+
     public String getNaam() {
         return naam;
     }
