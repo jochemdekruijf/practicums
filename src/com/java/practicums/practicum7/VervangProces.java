@@ -11,6 +11,6 @@ public class VervangProces implements OpmaakProces{
 
     @Override
     public String maakOp(String input) {
-        return input;
+        return input.replace(oud,nieuw);
     }
 }
