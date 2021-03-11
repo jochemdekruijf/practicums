@@ -1,5 +1,6 @@
 package com.java.practicums.practicum8;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class Fiets extends Voertuig{
@@ -9,6 +10,13 @@ public class Fiets extends Voertuig{
     public Fiets(String type, double nieuwprijs, int bouwjaar, int framenummer) {
         super(type, nieuwprijs, bouwjaar);
         this.framenummer = framenummer;
+    }
+
+    @Override
+    public double huidigeWaarde() {
+        double prijs = nieuwprijs;
+        int verschil = LocalDate.now().getYear() - bouwjaar;
+        return prijs * Math.pow(0.70, verschil);
     }
 
     @Override

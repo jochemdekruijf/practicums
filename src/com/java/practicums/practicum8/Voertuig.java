@@ -2,7 +2,7 @@ package com.java.practicums.practicum8;
 
 import java.util.Objects;
 
-abstract class Voertuig {
+abstract class Voertuig implements Goed {
     private String type;
     protected double nieuwprijs;
     protected int bouwjaar;

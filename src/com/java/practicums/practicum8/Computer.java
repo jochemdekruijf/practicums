@@ -1,5 +1,6 @@
 package com.java.practicums.practicum8;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class Computer implements Goed{
@@ -17,8 +18,10 @@ public class Computer implements Goed{
     }
 
     @Override
-    public double huigigeWaarde() {
-        return 0;
+    public double huidigeWaarde() {
+        double prijs = this.aanschafPrijs;
+        int verschil = LocalDate.now().getYear() - productieJaar;
+        return prijs * Math.pow(0.60, verschil);
     }
 
     @Override
