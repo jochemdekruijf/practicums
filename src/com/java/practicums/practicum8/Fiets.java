@@ -16,7 +16,7 @@ public class Fiets extends Voertuig{
     public double huidigeWaarde() {
         double prijs = nieuwprijs;
         int verschil = LocalDate.now().getYear() - bouwjaar;
-        return prijs * Math.pow(0.70, verschil);
+        return prijs * Math.pow(0.90, verschil);
     }
 
     @Override

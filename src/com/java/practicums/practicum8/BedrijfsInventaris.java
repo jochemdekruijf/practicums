@@ -1,5 +1,7 @@
 package com.java.practicums.practicum8;
 
+import com.java.practicums.practicum6B.Game;
+
 import java.util.ArrayList;
 
 public class BedrijfsInventaris {
@@ -25,11 +27,12 @@ public class BedrijfsInventaris {
 
     @Override
     public String toString() {
-        return "BedrijfsInventaris{" +
-                "bedrijfsnaam='" + bedrijfsnaam + '\'' +
-                ", budget=" + budget +
-                ", alleGoederen=" + alleGoederen +
-                '}';
+        String string = "";
+
+        for (Goed g : alleGoederen) {
+            string += g + "\n";
+        }
+        return string;
     }
 }
 

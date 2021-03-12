@@ -24,10 +24,6 @@ abstract class Voertuig implements Goed {
 
     @Override
     public String toString() {
-        return "Voertuig{" +
-                "type='" + type + '\'' +
-                ", nieuwprijs=" + nieuwprijs +
-                ", bouwjaar=" + bouwjaar +
-                '}';
+        return "Voertuig: " + type + " met bouwjaar " + bouwjaar + " heeft een waarde van: €" + nieuwprijs;
     }
 }
