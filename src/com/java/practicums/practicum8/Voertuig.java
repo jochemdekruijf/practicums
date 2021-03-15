@@ -2,6 +2,8 @@ package com.java.practicums.practicum8;
 
 import java.util.Objects;
 
+import static com.java.practicums.practicum8.Utils.euroBedrag;
+
 abstract class Voertuig implements Goed {
     private String type;
     protected double nieuwprijs;
@@ -24,6 +26,6 @@ abstract class Voertuig implements Goed {
 
     @Override
     public String toString() {
-        return "Voertuig: " + type + " met bouwjaar " + bouwjaar + " heeft een waarde van: €" + nieuwprijs;
+        return "Voertuig: " + type + " met bouwjaar " + bouwjaar + " heeft een waarde van: €" + euroBedrag(nieuwprijs);
     }
 }

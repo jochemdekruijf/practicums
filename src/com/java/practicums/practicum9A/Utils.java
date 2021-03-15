@@ -11,8 +11,7 @@ public class Utils {
     }
 
     public static String euroBedrag(double bedrag) {
-        counter++;
-        return "€" + String.format("%.2f", bedrag);
+        return euroBedrag(bedrag,2);
     }
     public static String euroBedrag(double bedrag, int precisie) {
         counter++;
