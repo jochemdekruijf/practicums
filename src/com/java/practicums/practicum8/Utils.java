@@ -9,6 +9,10 @@ public class Utils {
         com.java.practicums.practicum9A.Utils.euroBedrag(3.11314, 1);
     }
 
+    public static int getCounter(){
+        return counter;
+    }
+
     public static String euroBedrag(double bedrag) {
         return euroBedrag(bedrag, 2);
     }
