@@ -15,35 +15,37 @@ public class UserInput {
             System.out.println("Geef een naam op voor het nieuwe bestand?");
             String nieuw = sc.nextLine().replace(" ", "_");
 
-            if (!nieuw.contains(".txt")){
+            if (!nieuw.contains(".txt")) {
                 nieuw = nieuw + ".txt";
             }
 
             System.out.println("Geef de waarde op van 1 US dollar in eurocent. (Alles achter de comma)");
             String waarde = sc.nextLine();
 
-            try {
+
+            if (!waarde.matches("[a-zA-Z]+")) {
                 Double.parseDouble(waarde);
-            } catch(NumberFormatException e) {
-                System.out.println("Geen geldige input");
+            } else {
+                System.out.println("Geen geldige input, geldige input is bijv: 98.3243");
+                System.exit(0);
             }
+
 
             BufferedReader br = new BufferedReader(new FileReader(src));
             Path pnf = Path.of(nieuw);
             Writer output = new BufferedWriter(Files.newBufferedWriter(pnf));
 
-            try {
-                String line;
-                while ((line = br.readLine()) != null) {
-                    String newLine = line.split(" : ")[0] + " : " +
-                            String.format("%.2f", Double.parseDouble(waarde) / 100 * Double.parseDouble(line.split(" : ")[1])) + "\n";
-                    output.append(newLine);
-                }
-            } finally {
-                br.close();
-                output.close();
+
+            String line;
+            while ((line = br.readLine()) != null) {
+                String newLine = line.split(" : ")[0] + " : " +
+                        String.format("%.2f", Double.parseDouble(waarde) / 100 * Double.parseDouble(line.split(" : ")[1])) + "\n";
+                output.append(newLine);
+
             }
 
+            br.close();
+            output.close();
 
         } else System.out.println("Bestand niet bekend");
     }
